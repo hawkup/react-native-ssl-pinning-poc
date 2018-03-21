@@ -50,3 +50,5 @@ my-release-key.keystore
 gradle.properties
 
 trace.html
+
+googlecert.pem
