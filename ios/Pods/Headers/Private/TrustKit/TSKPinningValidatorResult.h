@@ -1,0 +1,1 @@
+../../../TrustKit/TrustKit/TSKPinningValidatorResult.h

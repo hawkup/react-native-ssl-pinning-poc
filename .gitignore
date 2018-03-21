@@ -52,3 +52,5 @@ gradle.properties
 trace.html
 
 googlecert.pem
+
+yarn-error.log

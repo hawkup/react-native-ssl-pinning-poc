@@ -11,6 +11,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <TrustKit/TrustKit.h>
 
 @implementation AppDelegate
 
@@ -31,6 +32,23 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  NSDictionary *trustKitConfig =
+  @{
+    kTSKPinnedDomains: @{
+        
+        @"google.com" : @{
+            kTSKEnforcePinning:@NO,
+            kTSKIncludeSubdomains:@YES,
+            kTSKPublicKeyAlgorithms : @[kTSKAlgorithmRsa2048],
+            kTSKPublicKeyHashes : @[
+                @"h6801m+z8v3zbgkRHpq6L29Esgfzhj89C1SyUCOQmqU="
+                ],
+            },
+        }
+    };
+  
+  [TrustKit initSharedInstanceWithConfiguration:trustKitConfig];
   return YES;
 }
 
