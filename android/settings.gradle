@@ -1,0 +1,3 @@
+rootProject.name = 'reactnativesslpinning'
+
+include ':app'
